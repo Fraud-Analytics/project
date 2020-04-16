@@ -1,0 +1,16 @@
+# compiler / IDE
+__pycache__/
+.idea
+.vscode
+
+# Jupyter Notebook
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+# huge variable files
+vars_308.csv
+vars 308.csv
+
+# scratch files
+test*
