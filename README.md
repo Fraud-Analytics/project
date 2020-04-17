@@ -11,7 +11,7 @@ Stephen Coggeshall 金融欺诈线上课程第二组（2020-04 -- 2020-05）
 
 #### Notes
 
-<div style="text-align: center">**请大家一定不要直接修改主分支 (master)**</div>
+**请大家一定不要直接修改主分支 (master)**
 
 - GitHub repo 地址：https://github.com/Fraud-Analytics/project <br/>
 工具 repo 地址：https://github.com/Fraud-Analytics/Useful_Tool
