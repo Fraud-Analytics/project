@@ -7,6 +7,8 @@ from sklearn.metrics import plot_roc_curve
 from sklearn.model_selection import train_test_split
 from sklearn.utils import shuffle
 
+__all__ = ['load_data', 'plot_report', 'fdr']
+
 
 def load_data(filename, test_size=0.2):
     """Loads data from file and split into train and test data.
