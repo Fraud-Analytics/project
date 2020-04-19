@@ -4,8 +4,18 @@ Stephen Coggeshall 金融欺诈线上课程第二组（2020-04 -- 2020-05）
 
 ## Roles
 
-- 韩耀东
-    - GitHub repo 管理
+- Feature Selection
+    - Filter
+        - 姚舜, 文铁
+    - Wrapper
+        - 韩耀东, 田震宇
+
+- Model Parameter Tuning
+
+- Research and Report Writing
+    
+- GitHub repo
+    - 韩耀东
 
 ## GitHub Workflow（工作流程）
 
@@ -50,3 +60,4 @@ Pull Request 提交合并请求。
 ## Plans
 
 ## Misc
+
