@@ -1,0 +1,45 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from sklearn.metrics import classification_report
+from sklearn.metrics import plot_confusion_matrix
+from sklearn.metrics import plot_roc_curve
+from sklearn.model_selection import train_test_split
+from sklearn.utils import shuffle
+
+
+def load_data(filename, test_size=0.2):
+    """Loads data from file and split into train and test data.
+    Parameters
+    ==========
+    filename : str
+    test_size : float
+    """
+    df = pd.read_csv(filename)
+    y = df['fraud_label']
+    df.drop(columns=['fraud_label'], inplace=True)
+    x_train, x_test, y_train, y_test = train_test_split(
+        df, y, test_size=test_size, shuffle=False)
+    x_train, y_train = shuffle(x_train, y_train)
+    return x_train, x_test, y_train, y_test
+
+
+def plot_report(classifier, x, y):
+    """Plots a report of the given classifier, including
+    FDR score, confusion matrix and ROC curve.
+    """
+    print(f'FDR: {fdr(classifier, x, y)}\n')
+    print(classification_report(y, classifier.predict(x)))
+    plot_confusion_matrix(classifier, x, y,
+                          values_format='', cmap=plt.cm.Blues)
+    plot_roc_curve(classifier, x, y)
+
+
+def fdr(classifier, x, y, cutoff=0.03):
+    """Calculates FDR score for the given classifier
+    on dataset x and y with cutoff value."""
+    prob = classifier.predict_proba(x)[:, -1:]
+    fraud_num = len(y[y == 1])
+    sorted_prob = np.asarray(sorted(zip(prob, y), key=lambda x: x[0], reverse=True))
+    cutoff_bin = sorted_prob[0:int(len(y) * cutoff), 1:]
+    return len(cutoff_bin[cutoff_bin == 1]) / fraud_num
