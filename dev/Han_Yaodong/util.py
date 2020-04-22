@@ -7,7 +7,7 @@ from sklearn.metrics import plot_roc_curve
 from sklearn.model_selection import train_test_split
 from sklearn.utils import shuffle
 
-__all__ = ['load_data', 'plot_report', 'fdr']
+__all__ = ['load_data', 'plot_report', 'fdr', 'fdr_prob']
 
 
 def load_data(filename, test_size=0.2):
@@ -40,8 +40,13 @@ def plot_report(classifier, x, y):
 def fdr(classifier, x, y, cutoff=0.03):
     """Calculates FDR score for the given classifier
     on dataset x and y with cutoff value."""
-    prob = classifier.predict_proba(x)[:, -1:]
-    fraud_num = len(y[y == 1])
-    sorted_prob = np.asarray(sorted(zip(prob, y), key=lambda x: x[0], reverse=True))
+    return fdr_prob(y, classifier.predict_proba(x), cutoff)
+
+
+def fdr_prob(y, y_prob, cutoff=0.03):
+    if len(y_prob.shape) != 1:
+        y_prob = y_prob[:, -1:]
+    num_fraud = len(y[y == 1])
+    sorted_prob = np.asarray(sorted(zip(y_prob, y), key=lambda x: x[0], reverse=True))
     cutoff_bin = sorted_prob[0:int(len(y) * cutoff), 1:]
-    return len(cutoff_bin[cutoff_bin == 1]) / fraud_num
+    return len(cutoff_bin[cutoff_bin == 1]) / num_fraud
