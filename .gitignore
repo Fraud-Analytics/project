@@ -13,6 +13,7 @@ ipython_config.py
 # huge variable files
 vars_308.csv
 vars 308.csv
+applications data.csv
 
 # scratch files
 test*
