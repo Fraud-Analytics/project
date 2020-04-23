@@ -2,6 +2,15 @@
 
 Stephen Coggeshall 金融欺诈线上课程第二组（2020-04 -- 2020-05）
 
+## Useful Links
+
+- python 库
+    - 主要调用第三方库，不需要自己实现模型和计算
+    - scikit-learn: https://scikit-learn.org/
+    - pandas: https://pandas.pydata.org/
+    - numpy: https://numpy.org/
+    - scipy: https://scipy.org/
+
 ## Roles
 
 - Feature Selection
