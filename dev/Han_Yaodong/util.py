@@ -26,6 +26,27 @@ def load_data(filename, test_size=0.2):
     return x_train, x_test, y_train, y_test
 
 
+def load_raw_data(filename, n_feature=25, test_size=0.2):
+    """Loads data from file and split into train and test data.
+    Parameters
+    ==========
+    filename : str
+    n_feature: int
+    test_size : float
+    """
+    df = pd.read_csv(filename)
+    features = pd.read_csv('wrapper_1.csv',
+                           index_col=False,
+                           header=None).to_numpy()
+    y = df['fraud_label']
+    df.drop(columns=['fraud_label'], inplace=True)
+    dr.filter(items=features[0:n_feature,0], inplcae=True)
+    x_train, x_test, y_train, y_test = train_test_split(
+        df, y, test_size=test_size, shuffle=False)
+    x_train, y_train = shuffle(x_train, y_train)
+    return x_train, x_test, y_train, y_test
+
+
 def plot_report(classifier, x, y):
     """Plots a report of the given classifier, including
     FDR score, confusion matrix and ROC curve.
