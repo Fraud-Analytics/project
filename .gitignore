@@ -11,8 +11,7 @@ profile_default/
 ipython_config.py
 
 # huge variable files
-vars_308.csv
-vars 308.csv
+var*.csv
 applications data.csv
 
 # scratch files
