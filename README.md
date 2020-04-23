@@ -11,6 +11,16 @@ Stephen Coggeshall 金融欺诈线上课程第二组（2020-04 -- 2020-05）
         - 韩耀东, 田震宇
 
 - Model Parameter Tuning
+    - Logistic regression
+        - params: C=1, class_weight='balanced'
+        - FDR: 50.05%
+    - Random forest
+    - Neural network
+    - Boosted tree
+    - SVM
+    - Decision tree
+    - K nearest neighbor
+    - Naive bayes
 
 - Research and Report Writing
     
