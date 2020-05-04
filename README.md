@@ -4,6 +4,14 @@ Stephen Coggeshall 金融欺诈线上课程第二组（2020-04 -- 2020-05）
 
 ## Useful Links
 
+- GitHub 
+    - Main repo: https://github.com/Fraud-Analytics/project
+    - Tool repo: https://github.com/Fraud-Analytics/Useful_Tool
+
+- Report: https://kdocs.cn/l/s6dGlA4Yr
+
+- Outline: https://kdocs.cn/l/sJUKCMqPR
+
 - python 库
     - 主要调用第三方库，不需要自己实现模型和计算
     - scikit-learn: https://scikit-learn.org/
@@ -46,9 +54,6 @@ Stephen Coggeshall 金融欺诈线上课程第二组（2020-04 -- 2020-05）
 ### Notes
 
 - **请大家一定不要直接修改主分支 (master)**
-
-- GitHub repo 地址：https://github.com/Fraud-Analytics/project <br/>
-工具 repo 地址：https://github.com/Fraud-Analytics/Useful_Tool
 
 - 所有提交和分支在同一 GitHub repo 中管理，每个人的开发文件请放在 `dev` 目录下的个人文件夹内。
 例如：`dev/Han_Yaodong`。（希望大家不要随意修改他人的文件😂）
