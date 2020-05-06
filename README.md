@@ -8,9 +8,9 @@ Stephen Coggeshall 金融欺诈线上课程第二组（2020-04 -- 2020-05）
     - Main repo: https://github.com/Fraud-Analytics/project
     - Tool repo: https://github.com/Fraud-Analytics/Useful_Tool
 
-- Report: https://kdocs.cn/l/s6dGlA4Yr
-
-- Outline: https://kdocs.cn/l/sJUKCMqPR
+- Report
+    - Report: https://kdocs.cn/l/sWF8n2Voi
+    - Outline: https://kdocs.cn/l/sJUKCMqPR
 
 - python 库
     - 主要调用第三方库，不需要自己实现模型和计算
