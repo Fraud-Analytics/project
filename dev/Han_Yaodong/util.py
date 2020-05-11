@@ -10,7 +10,7 @@ from sklearn.utils import shuffle
 __all__ = ['load_data', 'plot_report', 'fdr', 'fdr_prob']
 
 
-def load_data(filename, test_size=0.2, oot_size=0.2):
+def load_data(filename, test_size=0.2, oot_size=0.15):
     """Loads data from file and split into train and test data.
     Parameters
     ==========
