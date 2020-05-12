@@ -10,7 +10,7 @@ from sklearn.utils import shuffle
 __all__ = ['load_data', 'plot_report', 'fdr', 'fdr_prob']
 
 
-def load_data(filename, test_size=0.2, oot_size=0.2):
+def load_data(filename, test_size=0.2, oot_size=0.15):
     """Loads data from file and split into train and test data.
     Parameters
     ==========
@@ -22,6 +22,9 @@ def load_data(filename, test_size=0.2, oot_size=0.2):
     df.drop(columns=['fraud_label'], inplace=True)
     x_train, x_oot, y_train, y_oot = train_test_split(
             df, y, test_size=oot_size, shuffle=False)
+    if test_size == 0:
+        x_train, y_train = shuffle(x_train, y_train)
+        return x_train, None, x_oot, y_train, None, y_oot
     x_train, x_test, y_train, y_test = train_test_split(
             x_train, y_train, test_size=test_size)
     return x_train, x_test, x_oot, y_train, y_test, y_oot
